@@ -43,8 +43,8 @@ function Sidebar() {
     <div
       className={`pl-2 pt-5 z-[999] bg-white flex flex-col border-b-[1px] fixed md:relative
        border-gray-500 md:justify-between md:items-start overflow-hidden transition-all ease-linear duration-200 ${
-        state ? "h-[32rem]" : "h-[5rem]"
-      } md:h-[100vh] w-full md:w-[18%]`}
+         state ? "h-[32rem]" : "h-[5rem]"
+       } md:h-[100vh] w-full md:w-[18%]`}
     >
       <div className="flex flex-col gap-4 md:gap-8 items-center mr-2 w-full md:hidden">
         <div className="flex flex-row justify-between w-full">
@@ -64,7 +64,12 @@ function Sidebar() {
         </select>
         <div className="flex flex-col md:w-max w-full gap-2 mt-8">
           {data.map((item) => (
-            <Tab img={item.img} text={item.text} onClick={item.onClick} setState={setState} />
+            <Tab
+              img={item.img}
+              text={item.text}
+              onClick={item.onClick}
+              setState={setState}
+            />
           ))}
         </div>
       </div>
@@ -81,13 +86,28 @@ function Sidebar() {
         </select>
         <div className="flex flex-col gap-4">
           {data.map((item) => (
-            <Tab img={item.img} text={item.text} onClick={item.onClick} setState={setState} />
+            <Tab
+              img={item.img}
+              text={item.text}
+              onClick={item.onClick}
+              setState={setState}
+            />
           ))}
         </div>
       </div>
       <div className="flex flex-col gap-2 md:gap-4 mt-2 md:mt-8 ">
-        <Tab img={<ReportIcon />} text="report" onClick="/app/report" setState={setState} />
-        <Tab img={<LogoutIcon />} text="logout" onClick="/signin" setState={setState} />
+        <Tab
+          img={<ReportIcon />}
+          text="report"
+          onClick="/app/report"
+          setState={setState}
+        />
+        <Tab
+          img={<LogoutIcon />}
+          text="logout"
+          onClick="/signin"
+          setState={setState}
+        />
       </div>
     </div>
   );

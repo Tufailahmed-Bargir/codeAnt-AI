@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AuthPage() {
-  const [activeTab, setActiveTab] = useState<"saas" | "self-hosted">("saas")
+  const [activeTab, setActiveTab] = useState<"saas" | "self-hosted">("saas");
 
   const authOptions = {
     saas: [
@@ -15,7 +15,7 @@ export default function AuthPage() {
       { img: "/gitlab.png", text: "Self Hosted Gitlab" },
       { img: "/key.png", text: "Sign in with SSO" },
     ],
-  }
+  };
 
   return (
     <div className="bg-[#fafafa] md:flex md:flex-row md:justify-center md:items-center h-[100vh] border-[1px] border-[#f3f2f2]">
@@ -74,7 +74,7 @@ export default function AuthPage() {
             <p>CodeAnt AI</p>
           </div>
           <h1 className="font-semibold text-3xl">Welcome to CodeAnt AI</h1>
-          
+
           {/* Tabs */}
           <div className="flex flex-row gap-2 items-center md:p-4">
             <button
@@ -98,9 +98,9 @@ export default function AuthPage() {
               Self Hosted
             </button>
           </div>
-          
+
           <hr className="h-[1px] w-full bg-[#f3f2f2]" />
-          
+
           {/* Auth Options */}
           <div className="flex flex-col items-center w-full gap-5 md:pl-4 md:pr-4 md:pb-4">
             {authOptions[activeTab].map((option, index) => (
@@ -121,5 +121,5 @@ export default function AuthPage() {
         </p>
       </div>
     </div>
-  )
+  );
 }

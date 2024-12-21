@@ -31,16 +31,28 @@ function Header() {
       </div>
       <div className="flex flex-row gap-4 text-md">
         <Button imgSrc="/refresh.png" text="Refresh All" />
-        <Button imgSrc="/plus.png" text="Add Repository" bgColor="bg-[#1470ef]" textColor="text-white" />
+        <Button
+          imgSrc="/plus.png"
+          text="Add Repository"
+          bgColor="bg-[#1470ef]"
+          textColor="text-white"
+        />
       </div>
     </div>
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Button({ imgSrc, text, bgColor = "bg-white", textColor = "text-black" }:any) {
+function Button({
+    imgSrc,
+    text,
+    bgColor = "bg-white",
+    textColor = "text-black",
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+}: any) {
   return (
-    <button className={`flex flex-row gap-2 h-max rounded-lg p-2 ${bgColor} ${textColor} items-center justify-start`}>
+    <button
+      className={`flex flex-row gap-2 h-max rounded-lg p-2 ${bgColor} ${textColor} items-center justify-start`}
+    >
       <img src={imgSrc} alt="" />
       {text}
     </button>
@@ -48,7 +60,7 @@ function Button({ imgSrc, text, bgColor = "bg-white", textColor = "text-black" }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Tab({ name, access, languages, size, updates }:any) {
+function Tab({ name, access, languages, size, updates }: any) {
   return (
     <div className="flex flex-col gap-3 rounded-md bg-white md:p-5 p-3 transition-all ease-linear duration-50 hover:bg-[#f5f5f5]">
       <div className="flex flex-row items-center gap-3">
@@ -58,7 +70,10 @@ function Tab({ name, access, languages, size, updates }:any) {
         </p>
       </div>
       <div className="flex flex-row gap-5 md:gap-10">
-        <InfoItem text={languages} icon={<div className="rounded-[5rem] bg-[#1470ef] w-2 h-2"></div>} />
+        <InfoItem
+          text={languages}
+          icon={<div className="rounded-[5rem] bg-[#1470ef] w-2 h-2"></div>}
+        />
         <InfoItem text={size} icon={<img src="/database.png" alt="" />} />
         <p>Updated {updates} days ago</p>
       </div>
@@ -67,7 +82,7 @@ function Tab({ name, access, languages, size, updates }:any) {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function InfoItem({ text, icon }:any) {
+function InfoItem({ text, icon }: any) {
   return (
     <div className="flex flex-row gap-2 items-center">
       <p className="text-gray-500 text-sm">{text}</p>
